@@ -1,0 +1,81 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+span {
+    position: absolute;
+    background: url(../img/heart.png);
+    background-size: cover;
+    pointer-events: none;
+    transform: translate(-50%,-50%);
+    animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate(-50%,-50%);
+        opacity: 1;
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%,-1000%);
+        opacity: 0;
+        filter: hue-rotate(720deg);
+    }
+}
+
+
+@keyframes heartfade {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.heart {
+    z-index: 999;
+    animation: heartfade 6s linear;
+    position: absolute;
+}
+
+    .heart:before,
+    .heart:after {
+        content: "";
+        background-color: #fc2a62;
+        position: absolute;
+        height: 30px;
+        width: 45px;
+        border-radius: 15px 0px 0px 15px;
+    }
+
+    .heart:before {
+        transform: rotate(45deg);
+    }
+
+    .heart:after {
+        left: 10.5px;
+        transform: rotate(135deg);
+    }
